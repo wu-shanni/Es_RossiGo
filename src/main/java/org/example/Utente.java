@@ -8,5 +8,4 @@ public class Utente {
     public Double credito;
 
 
-
 }
