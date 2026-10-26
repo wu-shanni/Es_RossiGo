@@ -1,5 +1,7 @@
 package org.example;
 
+import static java.lang.IO.println;
+
 abstract class Veicolo {
     protected int codice;
     protected int lvlBatteria;
@@ -11,7 +13,7 @@ abstract class Veicolo {
 
     public abstract Double calcolaCosto(int minuti);
 
-    public abstract Double consumoBatteriaPerMinuto();
+    public abstract String consumoBatteriaPerMinuto();
 
 
 }
