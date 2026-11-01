@@ -1,24 +1,26 @@
 package org.example;
 
-class Bici extends Veicolo{
+class Bici extends Veicolo {
     protected int marce;
-    protected Double tariffa;
-    protected Double durata;
+    private static final double tariffa = 0.15;
+    private static final double consumo = 0.5; // 0.5% al minuto
 
-    public Bici(int codice, int marce, Double tariffa,Noleggio n) {
-        super(codice);
+    public Bici(String codice, double batteria, int marce) {
+        super(codice, batteria);
         this.marce = marce;
-        this.tariffa = tariffa;
-        durata = (double) n.Durata(n.oraI, n.oraF);
     }
 
     @Override
     public Double calcolaCosto(int minuti) {
-        return tariffa/durata;
+        return minuti * tariffa;
     }
 
     @Override
-    public String consumoBatteriaPerMinuto() {
-        return (double) lvlBatteria + " %";
+    public double consumoBatteriaPerMinuto() {
+        return consumo;
+    }
+
+    public int getNumeroMarce() {
+        return marce;
     }
 }
